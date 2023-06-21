@@ -1,0 +1,452 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px;
+  text-transform: uppercase;
+  background-color: #6AAF09;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+//-------LOADER--------//
+
+.loader {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+//-------MENU--------//
+
+.navbar {
+  padding: 30px 10px;
+  font-size: 1.7rem;
+
+  &-menu {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: #000000;
+  }
+
+  li {
+    list-style-type: none;
+
+  }
+
+  li a {
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  color: #000000;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e5d9d9;
+  padding: 5px 3px;
+  z-index: 99;
+
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 0;
+  margin-bottom: 15px;
+  min-width: max-content;
+}
+
+
+.dropdown-menu li a {
+  color: #000000;
+  text-decoration: none;
+  padding: 15px 0;
+}
+
+.aboutSection {
+  display: grid;
+  grid-template-columns: 56vw 30vw;
+  margin: 0 50px;
+  gap: 30px;
+}
+
+//-------HAVESERVICE--------//
+
+.line {
+  background-color: #6AAF09;
+  height: 3px;
+  width: 80px;
+  margin-top: 15px;
+}
+
+.aboutContent {
+
+  h1 {
+    font-size: 2.5rem;
+    max-width: 500px;
+  }
+
+  p {
+    padding: 25px 0;
+  }
+
+  ul {
+    padding-left: 20px;
+    font-size: 20px;
+  }
+}
+
+.service-main {
+  padding: 40px 0;
+  background-color: #f6f6f6;
+}
+
+.service {
+  grid-column: 2/-1;
+  gap: 20px;
+  max-width: 600px;
+  display: flex;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.grid-item {
+  padding: 20px;
+
+  h2 {
+    margin: 10px 0;
+  }
+}
+
+.pagetitle {
+  margin: 0 4.6em;
+}
+
+.form {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.serviceform {
+  margin: 20px 30px;
+
+  input {
+    height: 25px;
+  }
+
+  input,
+  textarea {
+    display: flex;
+    width: 900px;
+    margin: 5px 0;
+    padding: 5px;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  input::file-selector-button {
+    display: inline-block;
+    font-weight: bold;
+    color: #ffff;
+    padding: 2px 10px;
+    border-radius: 3px;
+    border: 1px solid #161032;
+    background: #161032;
+  }
+
+  button {
+    display: inline-block;
+    background: #6aaf09;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background: #03312E;
+  }
+}
+
+//-------HAVESERVICE CREATE & EDIT SERVICE ADMIN--------//
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.table {
+  margin-top: 15px;
+
+  tr {
+    background-color: #4f467a;
+    color: #fff;
+  }
+
+  th,
+  td {
+    padding: 15px;
+  }
+}
+
+//-------HAVESERVICE SLIDER REVIEW--------//
+
+.review {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.revieimg {
+  grid-area: 1/1/2/2;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.reviewoverlay {
+  grid-area: 1/1/2/2;
+  background-color: #6aaf09;
+  z-index: 98;
+  opacity: 0.6;
+}
+
+.reviewContent {
+  grid-area: 1/1/2/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 99;
+  color: #fff;
+
+  h2,
+  h3 {
+    margin: 40px;
+  }
+
+  .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .dot {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background-color: #ffffff77;
+      margin: 10px;
+      border-radius: 100px;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+//-------WEATHER--------//
+
+.weathermain {
+  max-width: 900px;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: 25px;
+  }
+}
+
+.weatherForm {
+  display: flex;
+  justify-content: center;
+
+
+  input {
+    width: 900px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 5px;
+
+  }
+}
+
+.weatherCity {
+
+  margin: 25px auto;
+}
+
+.weatherTable {
+  max-width: 1200px;
+  margin: 10px auto;
+
+  th,
+  td {
+    padding: 0 10px;
+  }
+}
+
+
+//-------NEWS--------//
+
+.news {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsForm {
+  margin: 20px;
+
+  input {
+    width: 900px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 5px;
+  }
+
+  button {
+    display: inline-block;
+    background: #02407e;
+    color: #fff;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  }
+}
+
+.newsArticle {
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  .newsContent {
+    margin-bottom: 10px;
+  }
+
+}
+
+//-------ENERGI DATA--------//
+
+.energyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.energySearch {
+  background-color: #f2ecec;
+  padding: 40px 30px;
+  margin: 15px;
+  box-shadow: 8px 8px 10px #c9c9c9;
+
+  h2 {
+    margin: 25px 0;
+  }
+}
+
+.energyForm {
+  max-width: 900px;
+
+
+  input {
+    margin: 5px;
+    height: 25px;
+    width: 250px;
+    padding: 0 5px;
+    outline: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .energyDropdown {
+    height: 25px;
+    outline: none;
+    border-radius: 5px;
+  }
+}
+
+.energyTable {
+
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #7ea8f8;
+  border-style: solid;
+  color: #000000;
+
+
+  td,
+  th {
+    border-width: 2px;
+    border-color: #7ea8f8;
+    border-style: solid;
+    padding: 5px;
+  }
+
+
+  /* thead {
+    background-color: #7ea8f8;
+  } */
+
+}
+
+//-----------FOOTER-----------//
+
+.copyright {
+  border-top: 1px solid #02407e;
+  padding: 25px;
+  margin-top: 50px;
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+  }
+}
