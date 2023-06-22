@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Error from '../components/Error'
 import Loader from '../components/Loader'
 import useRequestData from '../hooks/useRequestData'
-import { format, parse } from 'date-fns';
+import { format } from 'date-fns';
 
 const Energidata = () => {
 
@@ -72,7 +72,9 @@ const Energidata = () => {
                 <td>
                   {data &&
                     data.records.map((item) => (
-                      <p key={item.HourUTC}>{item.HourDK}</p>
+                      <p key={item.HourUTC}>
+                        {format(new Date(item.HourDK), 'yyyy-MM-dd HH:mm')}
+                      </p>
                     ))}
                 </td> <td>
                   {data &&
@@ -83,7 +85,9 @@ const Energidata = () => {
                 <td>
                   {data &&
                     data.records.map((item) => (
-                      <p key={item.HourUTC}>{item.SpotPriceDKK}</p>
+                      <p key={item.HourUTC}>
+                        {item.SpotPriceDKK.toFixed(2)}
+                      </p>
                     ))}
                 </td>
               </tr>

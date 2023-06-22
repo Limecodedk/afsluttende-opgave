@@ -2,7 +2,12 @@ import React from 'react'
 
 const HomeAdmin = () => {
   return (
-    <div>Velkommen til admin!</div>
+    <div className='dashbordHome'>
+      <h1>Velkommen admin!</h1>
+
+
+
+    </div>
   )
 }
 

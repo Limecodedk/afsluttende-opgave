@@ -42,6 +42,7 @@ const Vejret = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <button type='submit'>Søg</button>
       </form>
 
       {data && (
@@ -92,7 +93,6 @@ const Vejret = () => {
               </tr>
             </tbody>
           </table>
-
         </div >
       )}
     </div>

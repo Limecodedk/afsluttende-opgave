@@ -29,6 +29,10 @@ const useRequestData = () => {
         response = await axios.patch(url, bodydata, { headers: headers, params: params })
 
       }
+      else if (method === "PUT") {
+        response = await axios.put(url, bodydata, { headers: headers, params: params })
+
+      }
 
       setData(response.data)
       setError()

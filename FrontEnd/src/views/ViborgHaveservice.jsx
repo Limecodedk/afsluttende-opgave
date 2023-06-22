@@ -44,7 +44,7 @@ const ViborgHaveservice = () => {
           }
         </div>
         <div>
-          <a className='btn' href="http://">Se alle ydelser</a>
+          <a className='btn' href="/haveservice">Se alle ydelser</a>
         </div>
       </section>
 

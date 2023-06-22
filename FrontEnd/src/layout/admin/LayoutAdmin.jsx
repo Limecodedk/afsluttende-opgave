@@ -1,14 +1,13 @@
 import React from 'react'
-import HeaderAdmin from './HeaderAdmin'
 import NavbarAdmin from './NavbarAdmin'
 import { Outlet } from 'react-router-dom'
 
 const LayoutAdmin = () => {
   return (
     <>
-      <HeaderAdmin />
-      <NavbarAdmin />
-      <main>
+
+      <main className='adminDashbord'>
+        <NavbarAdmin />
         <Outlet />
       </main>
 

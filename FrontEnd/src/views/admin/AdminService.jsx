@@ -54,8 +54,8 @@ const AdminService = () => {
                   <td>{s.title}</td>
                   <td>{s.content}</td>
                   <td>{s.image}</td>
-                  <td><Link to={"/admin/editservice/" + s._id} ><FiEdit size={"1.5em"} /></Link></td>
-                  <td><MdOutlineDelete size={"1.7em"} color='darkred' onClick={() => handleDelete(s._id, s.title)} /></td>
+                  <td><Link to={"/admin/editservice/" + s._id} ><FiEdit size={"1.5em"} color='#fff' /></Link></td>
+                  <td><MdOutlineDelete size={"1.7em"} color='#fff' onClick={() => handleDelete(s._id, s.title)} /></td>
                 </tr>
               )
             }

@@ -19,11 +19,11 @@ const EditService = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-
+    console.log('hej')
     let fd = new FormData(e.target)
     await makeRequest("http://localhost:5023/services/admin/" + id,
       {
-        "Content-Type": ""
+        "Content-Type": "multipart/form-data"
       }, null, "PUT", fd
     )
   }
