@@ -25,17 +25,14 @@ const Nyheder = () => {
     event.preventDefault();
     setSearchQuery(search);
   };
-
   const handleCountryChange = (event) => {
     event.preventDefault();
     setSelectedCountry(event.target.value);
   };
-
   const handlesortBy = (event) => {
     event.preventDefault();
     setSortBy(event.target.value);
   };
-
   return (
     <div className='news'>
       <h1>Nyheder</h1>
@@ -113,7 +110,6 @@ const Nyheder = () => {
         </select>
         <button type="submit">Søg...</button>
       </form>
-
       {data &&
         data.articles.map((n) => (
           <article key={n.id} className='newsArticle'>

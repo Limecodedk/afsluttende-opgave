@@ -6,11 +6,8 @@ import { useParams } from 'react-router-dom';
 import useRequestData from '../../hooks/useRequestData'
 
 const EditService = () => {
-
   const { id } = useParams()
-
   const { data, isLoading, error, makeRequest } = useRequestData()
-
   useEffect(() => {
 
     makeRequest("http://localhost:5023/services/" + id,)
@@ -32,8 +29,8 @@ const EditService = () => {
       <div className='main'>
         <h1 className='pagetitle'>Ret Service </h1>
         {isLoading && <Loader />}
-
         {error && <Error error={error} />}
+
         <div className='form'>
           {
             data &&
@@ -49,5 +46,4 @@ const EditService = () => {
     </>
   )
 }
-
 export default EditService;

@@ -12,29 +12,23 @@ const AdminService = () => {
   const { data: dataDelete, isLoading: isLoadingDelete, error: errorDelete, makeRequest: makeRequestDelete } = useRequestData()
 
   useEffect(() => {
-
     makeRequest("http://localhost:5023/reviews/",
     )
-
   }, [dataDelete])
 
   const handleDelete = (id, title) => {
-
     if (window.confirm("Er du sikker på at du vil slette " + title + "?")) {
       makeRequestDelete("http://localhost:5023/reviews/admin/" + id,
         {
         }, null, "DELETE")
     }
   }
-
   return (
     <>
       <div className="main">
         <h1>Anmeldelser</h1>
         {isLoading && <Loader />}
-
         {error && <Error />}
-
 
         <table className='table'>
           <thead>
@@ -52,7 +46,7 @@ const AdminService = () => {
                 <tr key={s._id}>
                   <td>{s.author}</td>
                   <td>{s.content}</td>
-                  <td><Link to={"/admin/editslider/" + s._id} ><FiEdit size={"1.5em"} color='#fff' /></Link></td>
+                  <td><Link to={"/admin/editreviews/" + s._id} ><FiEdit size={"1.5em"} color='#fff' /></Link></td>
                   <td><MdOutlineDelete size={"1.7em"} color='#fff' onClick={() => handleDelete(s._id, s.author)} /></td>
                 </tr>
               )
@@ -61,10 +55,7 @@ const AdminService = () => {
         </table>
         <Link to={'/admin/createreviews/'} className='btn'>Tilføj ny</Link>
       </div>
-
-
     </>
   )
 }
-
 export default AdminService

@@ -5,8 +5,6 @@ import Loader from '../../components/Loader'
 import useRequestData from '../../hooks/useRequestData'
 
 const CreateService = () => {
-
-
   const { data, isLoading, error, makeRequest } = useRequestData()
 
   const handleSubmit = e => {
@@ -25,18 +23,16 @@ const CreateService = () => {
       <div className='main'>
         <h1 className='pagetitle'>Tilføj en service </h1>
         {isLoading && <Loader />}
-
         {error && <Error />}
+
         <div className='form'>
           <form className='serviceform' onSubmit={e => handleSubmit(e)}>
             <input type="text" name="title" id="" placeholder='Service titel' required />
             <textarea name="content" id="" cols="30" rows="10" placeholder='skriv en kort beskrivelse af servicen'></textarea>
             <input type="file" name="image" id="" />
-
             <button type='submit'>Opret Service</button>
           </form>
         </div>
-
         {
           data &&
           < article >
@@ -47,5 +43,4 @@ const CreateService = () => {
     </>
   )
 }
-
 export default CreateService

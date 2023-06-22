@@ -94,11 +94,9 @@ const Energidata = () => {
             </tbody>
           </table>
         </div>
-
       }
 
     </div >
   )
 }
-
 export default Energidata

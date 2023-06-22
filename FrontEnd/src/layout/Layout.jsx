@@ -11,10 +11,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
-
     </>
-
   )
 }
-
 export default Layout

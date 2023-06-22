@@ -30,7 +30,6 @@ const Vejret = () => {
       setZipcode(search);
     }
   };
-
   return (
     <div className='weathermain'>
       {isLoading && <Loader />}
@@ -49,7 +48,6 @@ const Vejret = () => {
           onChange={(e) => setZipcode(e.target.value)}
         />
         <button type='submit'>Søg</button>
-
         <datalist id='adresseforslag'>
           {
             dataDAWA && dataDAWA.map(a =>
@@ -57,9 +55,7 @@ const Vejret = () => {
             )
           }
         </datalist>
-
       </form>
-
       {data && (
         < div >
           {<h2 className='weatherCity'>{data.city.name}</h2>}

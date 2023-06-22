@@ -6,10 +6,8 @@ import useRequestData from '../hooks/useRequestData'
 import Parse from 'html-react-parser'
 
 const ViborgHaveservice = () => {
-
   const { data, isLoading, error, makeRequest } = useRequestData()
   const { data: dataService, isLoading: isLoadingService, error: errorService, makeRequest: makeRequestService } = useRequestData()
-
 
   useEffect(() => {
 
@@ -47,10 +45,7 @@ const ViborgHaveservice = () => {
           <a className='btn' href="/haveservice">Se alle ydelser</a>
         </div>
       </section>
-
     </div>
-
-
   )
 }
 

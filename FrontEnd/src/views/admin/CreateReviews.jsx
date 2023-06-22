@@ -6,9 +6,7 @@ import useRequestData from '../../hooks/useRequestData'
 
 const CreateService = () => {
 
-
   const { data, isLoading, error, makeRequest } = useRequestData()
-
   const handleSubmit = e => {
     e.preventDefault();
     let fd = new FormData(e.target)
@@ -25,8 +23,8 @@ const CreateService = () => {
       <div className='main'>
         <h1 className='pagetitle'>Tilføj en anmeldelse </h1>
         {isLoading && <Loader />}
-
         {error && <Error />}
+
         <div className='form'>
           <form className='serviceform' onSubmit={e => handleSubmit(e)}>
             <input type="text" name="author" id="" placeholder='Service titel' required />
@@ -34,7 +32,6 @@ const CreateService = () => {
             <button type='submit'>Opret anmeldelse</button>
           </form>
         </div>
-
         {
           data &&
           < article >
@@ -45,5 +42,4 @@ const CreateService = () => {
     </>
   )
 }
-
 export default CreateService

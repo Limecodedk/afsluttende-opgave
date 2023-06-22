@@ -12,7 +12,6 @@ const Slider = () => {
     makeRequest('http://localhost:5023/reviews');
   }, []);
 
-
   useEffect(() => {
     if (data && data.length > 0) {
       const interval = setInterval(() => {

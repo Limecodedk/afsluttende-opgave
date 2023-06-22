@@ -5,7 +5,6 @@ import { IoMdCreate } from 'react-icons/io';
 import { TfiLayoutSliderAlt } from 'react-icons/tfi';
 import { MdOutlineHomeRepairService, MdReviews } from 'react-icons/md';
 
-
 const NavbarAdmin = () => {
   return (
     <nav className='navbarAdmin'>
@@ -31,5 +30,4 @@ const NavbarAdmin = () => {
     </nav>
   )
 }
-
 export default NavbarAdmin

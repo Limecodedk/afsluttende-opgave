@@ -1,8 +1,5 @@
   @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
 
-
-
-
   * {
     padding: 0;
     margin: 0;
@@ -11,7 +8,6 @@
 
   body {
     font-family: Arial, Helvetica, sans-serif;
-
   }
 
   p {
@@ -83,7 +79,6 @@
     background-color: #e5d9d9;
     padding: 5px 3px;
     z-index: 999;
-
   }
 
   .dropdown:hover .dropdown-menu {
@@ -95,7 +90,6 @@
     margin-bottom: 15px;
     min-width: max-content;
   }
-
 
   .dropdown-menu li a {
     color: #000000;
@@ -122,9 +116,7 @@
       a:hover {
         color: #f2ecec;
       }
-
     }
-
   }
 
   //-------MENU ADMIN--------//
@@ -146,7 +138,7 @@
     }
 
     li {
-      padding-top: 15px;
+      padding-top: 25px;
       list-style-type: none;
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;
@@ -181,7 +173,6 @@
     padding: 5px 3px;
     z-index: 999;
     width: 300px;
-
   }
 
   .dropdownAdmin:hover .dropdown-menuAdmin {
@@ -193,7 +184,6 @@
     margin-bottom: 15px;
     min-width: max-content;
   }
-
 
   .dropdown-menuAdmin li a {
     color: #000000;
@@ -211,6 +201,29 @@
 
   .dashbordHome {
     margin: 40px 30px;
+  }
+
+  .analytics {
+    margin-top: 25px;
+    background-color: #f2ecec;
+    box-shadow: 8px 8px 10px #c9c9c9;
+    border-radius: 10px;
+    width: 550px;
+
+    &Content {
+      padding: 25px;
+    }
+
+    .table {
+      margin: 0 auto;
+      padding: 20px 10px;
+    }
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 25px;
+    }
   }
 
   //-------HOMEPAGE--------//
@@ -302,8 +315,6 @@
     }
   }
 
-
-
   //-------HAVESERVICE CREATE & EDIT SERVICE ADMIN--------//
 
   .pagetitle {
@@ -380,7 +391,6 @@
 
   //-------HAVESERVICE SLIDER REVIEW--------//
 
-
   .review {
     display: grid;
     grid-template-columns: 1fr;
@@ -456,7 +466,6 @@
     display: flex;
     justify-content: center;
 
-
     input {
       width: 900px;
       height: 40px;
@@ -492,7 +501,6 @@
       padding: 0 10px;
     }
   }
-
 
   //-------NEWS--------//
 
@@ -552,7 +560,6 @@
     .newsContent {
       margin-bottom: 10px;
     }
-
   }
 
   //-------ENERGI DATA--------//
@@ -583,7 +590,6 @@
 
   .energyForm {
     max-width: 900px;
-
 
     input {
       margin: 5px;
@@ -626,7 +632,6 @@
     border-style: solid;
     color: #000000;
 
-
     td,
     th {
       border-width: 2px;
@@ -634,8 +639,6 @@
       border-style: solid;
       padding: 5px;
     }
-
-
   }
 
   //-----------FOOTER-----------//
@@ -643,7 +646,7 @@
   .copyright {
     border-top: 1px solid #02407e;
     padding: 25px;
-    margin-top: 50px;
+
     text-align: center;
 
     p {
@@ -664,7 +667,6 @@
     animation-name: slidein;
     height: 350px;
 
-
     @keyframes slidein {
       0% {
         rotate: 0deg;
@@ -674,5 +676,4 @@
         rotate: 360deg;
       }
     }
-
   }

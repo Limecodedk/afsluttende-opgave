@@ -12,14 +12,11 @@ const AdminService = () => {
   const { data: dataDelete, isLoading: isLoadingDelete, error: errorDelete, makeRequest: makeRequestDelete } = useRequestData()
 
   useEffect(() => {
-
     makeRequest("http://localhost:5023/services",
     )
-
   }, [dataDelete])
 
   const handleDelete = (id, title) => {
-
     if (window.confirm("Er du sikker på at du vil slette " + title + "?")) {
       makeRequestDelete("http://localhost:5023/services/admin/" + id,
         {
@@ -32,9 +29,7 @@ const AdminService = () => {
       <div className="main">
         <h1>Service</h1>
         {isLoading && <Loader />}
-
         {error && <Error />}
-
 
         <table className='table'>
           <thead>
@@ -63,10 +58,7 @@ const AdminService = () => {
         </table>
         <Link to={'/admin/createservice/'} className='btn'>Tilføj ny</Link>
       </div>
-
-
     </>
   )
 }
-
 export default AdminService
