@@ -14,6 +14,9 @@ import Energidata from './views/Energidata'
 import EditService from './views/admin/EditService';
 import CreateService from './views/admin/CreateService';
 import AdminService from './views/admin/AdminService';
+import EditReviews from './views/admin/EditReviews';
+import AdminReviews from './views/admin/AdminReviews';
+import CreateReviews from './views/admin/CreateReviews';
 
 function App() {
 
@@ -39,7 +42,10 @@ function App() {
           <Route index element={<HomeAdmin />} />
           <Route path='adminservice' element={<AdminService />} />
           <Route path='createservice' element={<CreateService />} />
+          <Route path='createreviews' element={<CreateReviews />} />
           <Route path='editservice/:id' element={<EditService />} />
+          <Route path='editreviews/:id' element={<EditReviews />} />
+          <Route path='adminslider' element={<AdminReviews />} />
           <Route path='*' element={<NotFound />} />
         </Route>
 

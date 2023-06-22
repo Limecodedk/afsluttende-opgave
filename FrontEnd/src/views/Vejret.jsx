@@ -9,11 +9,16 @@ const Vejret = () => {
   const [search, setSearch] = useState('');
 
   const { data, isLoading, error, makeRequest } = useRequestData()
+  const { data: dataDAWA, isLoading: isLodingDAWA, error: errorDAWA, makeRequest: makeRequestDAWA } = useRequestData()
 
   useEffect(() => {
-    if (zipcode !== '') {
+    if (zipcode.length === 4 && !isNaN(zipcode)) {
       makeRequest(
         `https://api.openweathermap.org/data/2.5/forecast?zip=${zipcode},dk&appid=${process.env.REACT_APP_OPENWEATHERKEY}`
+      )
+    } else {
+      makeRequestDAWA(
+        "https://api.dataforsyningen.dk/postnumre/autocomplete?&q=" + zipcode
       )
     }
   }, [zipcode])
@@ -38,16 +43,26 @@ const Vejret = () => {
           maxLength="4"
           name="zipcode"
           id="zipcode"
+          autoComplete='off'
           placeholder='skriv postnummer'
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          list='adresseforslag'
+          onChange={(e) => setZipcode(e.target.value)}
         />
         <button type='submit'>Søg</button>
+
+        <datalist id='adresseforslag'>
+          {
+            dataDAWA && dataDAWA.map(a =>
+              <option value={a.postnummer.nr}>{a.tekst}</option>
+            )
+          }
+        </datalist>
+
       </form>
 
       {data && (
-        <div>
-          <h2 className='weatherCity'>{data.city.name}</h2>
+        < div >
+          {<h2 className='weatherCity'>{data.city.name}</h2>}
           <table className='weatherTable'>
             <thead>
               <tr>
@@ -94,8 +109,9 @@ const Vejret = () => {
             </tbody>
           </table>
         </div >
-      )}
-    </div>
+      )
+      }
+    </div >
   )
 }
 

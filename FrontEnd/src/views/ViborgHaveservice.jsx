@@ -33,7 +33,7 @@ const ViborgHaveservice = () => {
         <div className='service'>
           {
             dataService && dataService.map(c =>
-              <div className='grid-container'>
+              <div className='grid-container' key={c._id}>
                 <div className='grid-item'>
                   <img src={"http://localhost:5023/images/" + c.image} alt="" />
                   <h2>{c.title}</h2>

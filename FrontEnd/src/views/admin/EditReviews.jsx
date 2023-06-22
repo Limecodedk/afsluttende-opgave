@@ -13,14 +13,14 @@ const EditService = () => {
 
   useEffect(() => {
 
-    makeRequest("http://localhost:5023/services/" + id,)
+    makeRequest("http://localhost:5023/reviews/" + id,)
 
   }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();
     let fd = new FormData(e.target)
-    await makeRequest("http://localhost:5023/services/admin/" + id,
+    await makeRequest("http://localhost:5023/reviews/admin/" + id,
       {
         "Content-Type": "multipart/form-data"
       }, null, "PUT", fd
@@ -30,7 +30,7 @@ const EditService = () => {
   return (
     <>
       <div className='main'>
-        <h1 className='pagetitle'>Ret Service </h1>
+        <h1 className='pagetitle'>Ret anmeldelse </h1>
         {isLoading && <Loader />}
 
         {error && <Error error={error} />}
@@ -38,10 +38,9 @@ const EditService = () => {
           {
             data &&
             < form className='serviceform' onSubmit={e => handleSubmit(e)}>
-              <input type="text" name="title" defaultValue={data.title} placeholder='Service titel' required />
+              <input type="text" name="author" defaultValue={data.author} placeholder='Forfatter' required />
               <textarea name="content" id="" cols="30" rows="10" defaultValue={data.content} ></textarea>
-              <input type="file" name="image" id="" />
-              <button type='submit'>Ret Service</button>
+              <button type='submit'>Ret anmeldelse</button>
             </form >
           }
         </div>

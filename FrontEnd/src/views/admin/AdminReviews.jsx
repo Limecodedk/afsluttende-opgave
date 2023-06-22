@@ -13,7 +13,7 @@ const AdminService = () => {
 
   useEffect(() => {
 
-    makeRequest("http://localhost:5023/services",
+    makeRequest("http://localhost:5023/reviews/",
     )
 
   }, [dataDelete])
@@ -21,7 +21,7 @@ const AdminService = () => {
   const handleDelete = (id, title) => {
 
     if (window.confirm("Er du sikker på at du vil slette " + title + "?")) {
-      makeRequestDelete("http://localhost:5023/services/admin/" + id,
+      makeRequestDelete("http://localhost:5023/reviews/admin/" + id,
         {
         }, null, "DELETE")
     }
@@ -30,7 +30,7 @@ const AdminService = () => {
   return (
     <>
       <div className="main">
-        <h1>Service</h1>
+        <h1>Anmeldelser</h1>
         {isLoading && <Loader />}
 
         {error && <Error />}
@@ -39,9 +39,8 @@ const AdminService = () => {
         <table className='table'>
           <thead>
             <tr>
-              <th>Titel:</th>
+              <th>Forfatter:</th>
               <th>Beskrivelse:</th>
-              <th>Billede:</th>
               <th>Ret</th>
               <th>Slet</th>
             </tr>
@@ -51,17 +50,16 @@ const AdminService = () => {
               data && data.map(s =>
 
                 <tr key={s._id}>
-                  <td>{s.title}</td>
+                  <td>{s.author}</td>
                   <td>{s.content}</td>
-                  <td>{s.image}</td>
-                  <td><Link to={"/admin/editservice/" + s._id} ><FiEdit size={"1.5em"} color='#fff' /></Link></td>
-                  <td><MdOutlineDelete size={"1.7em"} color='#fff' onClick={() => handleDelete(s._id, s.title)} /></td>
+                  <td><Link to={"/admin/editslider/" + s._id} ><FiEdit size={"1.5em"} color='#fff' /></Link></td>
+                  <td><MdOutlineDelete size={"1.7em"} color='#fff' onClick={() => handleDelete(s._id, s.author)} /></td>
                 </tr>
               )
             }
           </tbody >
         </table>
-        <Link to={'/admin/createservice/'} className='btn'>Tilføj ny</Link>
+        <Link to={'/admin/createreviews/'} className='btn'>Tilføj ny</Link>
       </div>
 
 
